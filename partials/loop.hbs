@@ -1,0 +1,14 @@
+{{#foreach posts}}
+<article class="{{post_class}}">
+    {{#if image}}
+        <header style="background-image: url({{image}});"></header>
+    {{/if}}
+        <section>
+            <h3 class="post-title"><a href="{{url}}">{{{title}}}</a></h3>
+            <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+            <p class="intro">{{excerpt words="40"}}...</p>
+            <p class="more"><a href="{{url}}">Read more</a></p>
+            <p class="tags">{{tags prefix=" on "}}</p>
+        </section>
+</article>
+{{/foreach}}

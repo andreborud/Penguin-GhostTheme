@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>André Borud - {{title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+    <meta name="author" content="{{author}}">
+    <meta name="designer" content="André Borud">
+    <meta name="HandheldFriendly" content="True" />
+
+    <link rel="shortcut icon" href="{{asset "images/favicon.png"}}" type="image/png">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "fonts/foundation-icons.css"}}" />
+
+    <!--[if IE]>
+        <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    {{ghost_head}}
+
+</head>
+
+<body>
+
+    {{{body}}}
+
+    <footer class="site-footer clearfix">
+         <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a> using <a href="https://gsomewhere.com">Penguin</a> theme</section>
+    </footer>
+
+    {{ghost_foot}}
+
+    <script type='text/javascript' src='{{asset "js/angular.min.js"}}'></script>
+    <script type='text/javascript' src='{{asset "js/angular-route.min.js"}}'></script>
+    <script type='text/javascript' src='{{asset "js/ng-infinite-scroll.min.js"}}'></script>
+    <script type='text/javascript' src='{{asset "js/isotope.pkgd.min.js"}}'></script>
+    <script type='text/javascript' src='{{asset "js/penguin.js"}}'></script>
+</body>
+</html>

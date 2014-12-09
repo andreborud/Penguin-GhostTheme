@@ -1,0 +1,45 @@
+{{!< default}}
+
+{{#post}}
+
+<header class="page-header" style="background-image: url({{image}})">
+    <div class="page-header-cover">
+        <div class="page-title-block">
+            <h1 class="post-title">{{{title}}}</h1>
+            <div class="post-meta">
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<nav id="page-navigation">
+    <div class="navigation-content">
+        {{#if @blog.logo}}
+        <img class="logo" src="{{@blog.logo}}" />{{/if}}
+        <div class="titles">
+            <h1>{{@blog.title}}</h1>
+            <p>{{@blog.description}}</p>
+        </div>
+        <ul class="menu">
+            <li><a href="/">Blog</a>
+            </li>
+            <li onclick="filter('.tag-portfolio')">Portfolio</li>
+            <li><a href="/about">About</a>
+            </li>
+        </ul>
+        {{> "social"}}
+    </div>
+</nav>
+
+<article class="post-container post-container--single">
+
+    <section class="{{post_class}}">
+        <time datetime="{{date format=" DD MMM YYYY "}}" class="post-meta__date date">{{date format="DD MMM YYYY"}}</time> <span class="post-meta__tags tags">{{tags prefix="on "}}</span>
+        {{content}}
+    </section>
+
+</article>
+
+    {{!-- {{> comments}} --}}
+{{/post}}

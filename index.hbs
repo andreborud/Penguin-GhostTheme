@@ -1,0 +1,44 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+<header class="header-background">
+    <div class="header-cover">
+        <div class="header-content">
+            {{#if @blog.logo}}<img class="logo" src="{{@blog.logo}}" />{{/if}}
+            <h1>{{@blog.title}}</h1>
+            <div class="divider"></div>
+            <p>{{@blog.description}}</p>
+        </div>
+    </div>
+</header>
+
+<nav id="page-navigation">
+    <div class="navigation-content">
+        {{#if @blog.logo}}
+        <img class="logo" src="{{@blog.logo}}" />{{/if}}
+        <div class="titles">
+            <h1>{{@blog.title}}</h1>
+            <p>{{@blog.description}}</p>
+        </div>
+        <ul class="menu">
+            <li onclick="goToBlog()">Blog</li>
+            <li><a href="/tag/portfolio">Portfolio</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+        {{> "social"}}
+    </div>
+</nav>
+
+
+<div id="container" role="main" ng-app='penguinApp' ng-controller='scrollController'>
+
+  <div infinite-scroll='penguin.nextPage()' infinite-scroll-disabled='penguin.busy' infinite-scroll-distance='1'>
+
+      <main id="posts">
+
+        {{> "loop"}}
+
+      </main>
+    <div ng-show='penguin.busy' class="loading">Loading data...</div>
+  </div>
+</div>
